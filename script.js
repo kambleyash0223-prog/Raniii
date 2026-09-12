@@ -110,3 +110,26 @@ function createHearts() {
 
     }
 }
+
+
+function friendshipMessage() {
+
+    emailjs.send(
+        "service_bclo6nf",
+        "template_5bs67w7",
+        {
+            name: "Friendship Button",
+            email: "kambleyash661@gmail.com",
+            phone: "",
+            message: "🤝❤️ तिने 'आपली Friendship अशीच ठेवूया' हा button क्लिक केला."
+        }
+    )
+        .then(function (response) {
+            console.log("Friendship message sent!", response.status);
+            nextPage('friendship');
+        })
+        .catch(function (error) {
+            console.log("FAILED...", error);
+            nextPage('friendship');
+        });
+}
